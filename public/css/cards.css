@@ -11,7 +11,7 @@ body {margin: 0; padding:0;}
 }
 
 h1{
-  position:absolute; top:5mm; left:5mm;
+  position:absolute; top:0mm; left:5mm;
   font-size:12pt;
 }
 
@@ -46,6 +46,16 @@ ul
     padding:0;
     position:absolute; top:15mm; left:70mm; 
 }
+
+.cite{
+    font-size:6pt;
+    text-align: right;
+    margin:0;
+    padding:0;
+    position:absolute; bottom:0mm; right:5mm; 
+}
+
+
 
 /** For screen preview **/
 @media screen {

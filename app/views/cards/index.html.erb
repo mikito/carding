@@ -20,6 +20,7 @@
   </div>
 
   <div class="instruction-steps">
+    STEPS
     <ul>
     <%- @model["steps"].each do |item| -%>
       <li><%= item %></li>
@@ -27,6 +28,9 @@
     </ul>
   </div>
 
+  <div class="cite">
+  <p><%= @model["source"] %> : <%= @model["url"] %></p>
+  </div>
 </section>
 </body>
 </html>
