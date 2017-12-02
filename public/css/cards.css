@@ -16,8 +16,8 @@ h1{
 }
 
 img{
-  width: 50mm;
-  height: 50mm;
+  width: 40mm;
+  height: 40mm;
   position:absolute; top:15mm; left:5mm;
 }
 
@@ -37,7 +37,7 @@ ul
     font-size:8pt;
     margin:0;
     padding:0;
-    position:absolute; top:65mm; left:5mm; 
+    position:absolute; top:55mm; left:5mm; 
 }
 
 .instruction-steps{
@@ -55,8 +55,6 @@ ul
     position:absolute; bottom:0mm; right:5mm; 
 }
 
-
-
 /** For screen preview **/
 @media screen {
     body { background: #e0e0e0 }
@@ -69,5 +67,5 @@ ul
 
 @media print {
   body {
-    width:148mm; height:100mm; /* needed for Chrome */
+    width:148mm; height:99mm;
 }
