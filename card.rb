@@ -32,7 +32,7 @@ end
 #  p node.inner_text
 #end
 
-p model
+#p model
 
 template = File.read("card.erb")
 

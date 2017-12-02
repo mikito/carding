@@ -1,23 +1,22 @@
-<html>
-  <head>
-    <title> <%= model["title"] %></title>
-  </head>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="card.css" type="text/css">
+<title><%= model["title"] %></title>
+</head>
+<body>
 
-
-  <body>
-    <h1><%= model["title"] %></h1>
-
-    <img src='<%= model["image"] %>' />
-
-    <div id="ingredients">
-      <%- model["ingredients"].each do |item| -%>
-        <div class="ingredient_name"> 
-          <%= item["name"] %>
-        </div>
-        <div class="ingredient_amount"> 
-          <%= item["quantity"] %>
-        </div>
-      <%- end -%>
-    </div>
-  </body>
+<section class="sheet">
+  <h1><%= model["title"] %></h1>
+  <img src='<%= model["image"] %>' />
+  <div class="ingredients">
+    <ul>
+    <%- model["ingredients"].each do |item| -%>
+      <li><%= item["name"] %> : <%= item["quantity"] %></li>
+    <%- end -%>
+    </ul>
+  </div>
+</section>
+</body>
 </html>
