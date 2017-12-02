@@ -2,17 +2,19 @@ class CardsController < ApplicationController
   def new
   end
 
-  def create 
-    #url = 'https://cookpad.com/recipe/2069863'
+  def index
     url = params["url"]
-    charset = nil
+    return redirect_to :root if url.blank?
 
-    html = open(url) do |f|
-      charset = f.charset
-      f.read
-    end
+    uri = URI.parse(url)
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    req = Net::HTTP::Get.new(uri.path)
 
-    doc = Nokogiri::HTML.parse(html, nil, charset)
+    res = http.request(req)
+
+    doc = Nokogiri::HTML.parse(res.body)
 
     @model = {}
     @model["title"] = doc.title.gsub("【クックパッド】 簡単おいしいみんなのレシピが279万品", "")
@@ -29,7 +31,6 @@ class CardsController < ApplicationController
     #doc.xpath('//dd[@class="instruction"]').each do |node|
     #  p node.inner_text
     #end
-    #
-    render :cards 
+    render :layout => false 
   end
 end
