@@ -19,8 +19,8 @@ h1{
 }
 
 img{
-  width: 40mm;
-  height: 40mm;
+  width: 35mm;
+  height: 35mm;
   position:absolute; top:15mm; left:5mm;
   border-radius: 3mm;
   -webkit-border-radius: 3mm;
@@ -34,20 +34,21 @@ li{
 
 ul
 {
-  margin: 5mm;
+  margin-left: 5mm;
+  margin-right: 5mm;
   padding: 0;
+
 }
 
-
 .ingredients{
-    font-size:8pt;
+    font-size:6%;
     margin:0;
     padding:0;
-    position:absolute; top:55mm; left:5mm; 
+    position:absolute; top:50mm; left:5mm; 
 }
 
 .instruction-steps{
-    font-size:8pt;
+    font-size:6pt;
     margin:0;
     padding:0;
     position:absolute; top:15mm; left:70mm; 

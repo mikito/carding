@@ -21,11 +21,18 @@ class CardsController < ApplicationController
     @model["image"] = doc.xpath('//div[@id="main-photo"]/img').attribute('src').value
     @model["ingredients"] = []
 
+    index = 0
     doc.xpath('//div[contains(@class,"ingredient_row")]').each do |node|
+      if index >= 11 
+        @model["ingredients"].last["quantity"] += " etc..."
+        break
+      end
+
       ingredient = {} 
       ingredient["name"] = node.xpath('div[@class="ingredient_name"]').inner_text.strip
       ingredient["quantity"] = node.xpath('div[@class="ingredient_quantity amount"]').inner_text.strip
       @model["ingredients"] << ingredient
+      index += 1
     end
 
     @model["steps"] = []
