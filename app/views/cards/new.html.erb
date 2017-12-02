@@ -1,5 +1,6 @@
-<%= form_tag("/cards", method: "get") do %>
-  <%= label_tag(:url, "URL") %>
-  <%= text_field_tag(:url, '', :placeholder => "https://cookpad.com/recipe/2069863") %>
-  <%= submit_tag("Carding") %>
+<%= form_tag("/cards", method: "get", class: "form-horizontal") do %>
+  <%= label_tag(:url, "URL", class: 'col-sm-3 control-label') %>
+  <%= text_field_tag(:url, '', placeholder: "https://cookpad.com/recipe/2069863", class: 'form-control') %>
+  <%= submit_tag("Carding", class: 'btn btn-primary') %>
 <% end %>
+
