@@ -28,9 +28,18 @@ class CardsController < ApplicationController
       @model["ingredients"] << ingredient
     end
 
-    #doc.xpath('//dd[@class="instruction"]').each do |node|
-    #  p node.inner_text
-    #end
+    @model["steps"] = []
+
+    index = 0
+    doc.xpath('//p[@class="step_text"]').each do |node|
+      break if params["max_step"].present? && index >= params["max_step"].to_i
+      @model["steps"] << node.inner_text.strip
+      index += 1
+    end
+
+    @model["source"] = "Cookpad"
+    @model["url"] = url
+
     render :layout => false 
   end
 end

@@ -18,6 +18,15 @@
     <%- end -%>
     </ul>
   </div>
+
+  <div class="instruction-steps">
+    <ul>
+    <%- @model["steps"].each do |item| -%>
+      <li><%= item %></li>
+    <%- end -%>
+    </ul>
+  </div>
+
 </section>
 </body>
 </html>

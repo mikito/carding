@@ -31,7 +31,7 @@ body {
 }
 body {
   color: #fff;
-  text-align: center;
+  text-align: left;
   text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
 }
 
@@ -120,6 +120,7 @@ body {
  */
 
 .mastfoot {
+  text-align: center;
   color: rgba(255,255,255,.5);
 }
 
